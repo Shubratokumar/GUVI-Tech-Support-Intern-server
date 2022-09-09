@@ -30,12 +30,6 @@ async function run() {
             const result = await usersCollection.findOne(query);
             res.send(result);
         })
-        //  creating new user
-        app.post('/user', async(req, res)=>{
-            const user = req.body;
-            const result = await usersCollection.insertOne(user);
-            res.send(result);
-        })
         //  update user profile
         app.put('/user/:email', async(req, res)=>{
             const email = req.params.email;
